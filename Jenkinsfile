@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     dir('Q3') {
-                        docker.build("java-hello-world-app", ".")
+                        docker.build("HelloWorld", ".")
                     }
                 }
             }
