@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     dir('Q3') {
-                        docker.build("HelloWorld", ".")
+                        docker.build("java-hello-world-app", ".")
                     }
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image("HelloWorld").run()
+                    docker.image("java-hello-world-app").run()
                 }
             }
         }
