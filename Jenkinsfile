@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    dir('Q3') {
+                        {
                         docker.build("java-hello-world-app", ".")
                     }
                 }
