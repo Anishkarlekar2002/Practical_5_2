@@ -21,7 +21,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image("java-hello-world-app").run()
+                    docker.image("HelloWorld").run()
                 }
             }
         }
