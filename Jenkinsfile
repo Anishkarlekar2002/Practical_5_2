@@ -16,12 +16,14 @@ pipeline {
             }
         }
 
-        stage('Run Docker Container') {
+       stage('Run Docker Container') {
             steps {
                 script {
-                    docker.image("java-hello-world-app").run()
-                }
+                    def containerOutput = bat(script: 'docker run --rm java-hello-world-app', returnStdout: true).trim()
+                    echo "Output from Docker container:\n${containerOutput}"
+                 }
             }
         }
+
     }
 }
